@@ -1,0 +1,263 @@
+Script started on 2023-09-23 01:06:25-04:00
+bash-4.4$ mk[K[Kls
+assignment1script.txt  cs131  Worksheet1  Worksheet2
+bash-4.4$ mkdir Assignment1
+bash-4.4$ cd Assignment1
+bash-4.4$ echo $Sh[KHELL
+/bin/bash
+bash-4.4$ echo $Home[K[K[KOME
+/mnt/scratch/FA23_CS131_Ashish/rogeliof23
+bash-4.4$ /etc/passwd
+bash: /etc/passwd: Permission denied
+bash-4.4$ echo [K[K[K[K[Kmk [KDir[K[K[Kdir myDir
+bash-4.4$ chmod 5 - - myDir
+chmod: cannot access '-': No such file or directory
+chmod: cannot access '-': No such file or directory
+bash-4.4$ chmod 3[K5-- myDir
+chmod: invalid mode: ‘5--’
+Try 'chmod --help' for more information.
+bash-4.4$ ch[K[Kchmod --help
+Usage: chmod [OPTION]... MODE[,MODE]... FILE...
+  or:  chmod [OPTION]... OCTAL-MODE FILE...
+  or:  chmod [OPTION]... --reference=RFILE FILE...
+Change the mode of each FILE to MODE.
+With --reference, change the mode of each FILE to that of RFILE.
+
+  -c, --changes          like verbose but report only when a change is made
+  -f, --silent, --quiet  suppress most error messages
+  -v, --verbose          output a diagnostic for every file processed
+      --no-preserve-root  do not treat '/' specially (the default)
+      --preserve-root    fail to operate recursively on '/'
+      --reference=RFILE  use RFILE's mode instead of MODE values
+  -R, --recursive        change files and directories recursively
+      --help     display this help and exit
+      --version  output version information and exit
+
+Each MODE is of the form '[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+'.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/chmod>
+or available locally via: info '(coreutils) chmod invocation'
+bash-4.4$ q[Kchmod 5** myDir
+chmod: invalid mode: ‘5**’
+Try 'chmod --help' for more information.
+bash-4.4$ man chmode[K
+[?1049h[22;0;0t[?1h=CHMOD(1)                                                              User Commands                                                              CHMOD(1)[m
+[m
+[1mNAME[0m[m
+       chmod - change file mode bits[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mchmod [22m[[4mOPTION[24m]... [4mMODE[24m[[4m,MODE[24m]... [4mFILE[24m...[m
+       [1mchmod [22m[[4mOPTION[24m]... [4mOCTAL-MODE[24m [4mFILE[24m...[m
+       [1mchmod [22m[[4mOPTION[24m]... [4m--reference=RFILE[24m [4mFILE[24m...[m
+[m
+[1mDESCRIPTION[0m[m
+       This manual page documents the GNU version of [1mchmod[22m.  [1mchmod [22mchanges the file mode bits of each given file according to [4mmode[24m, which can be either a[m
+       symbolic representation of changes to make, or an octal number representing the bit pattern for the new mode bits.[m
+[m
+       The format of a symbolic mode is [[1mugoa[22m...][[[1m-+=[22m][[4mperms[24m...]...], where [4mperms[24m is either zero or more letters from the set [1mrwxXst[22m, or a single letter[m
+       from the set [1mugo[22m.  Multiple symbolic modes can be given, separated by commas.[m
+[m
+       A  combination  of  the letters [1mugoa [22mcontrols which users' access to the file will be changed: the user who owns it ([1mu[22m), other users in the file's[m
+       group ([1mg[22m), other users not in the file's group ([1mo[22m), or all users ([1ma[22m).  If none of these are given, the effect is as if ([1ma[22m) were  given,  but  bits[m
+       that are set in the umask are not affected.[m
+[m
+       The  operator  [1m+  [22mcauses  the  selected file mode bits to be added to the existing file mode bits of each file; [1m- [22mcauses them to be removed; and [1m=[0m[m
+       causes them to be added and causes unmentioned bits to be removed except that a directory's unmentioned  set  user  and  group  ID  bits  are  not[m
+       affected.[m
+[m
+       The letters [1mrwxXst [22mselect file mode bits for the affected users: read ([1mr[22m), write ([1mw[22m), execute (or search for directories) ([1mx[22m), execute/search only[m
+       if the file is a directory or already has execute permission for some user ([1mX[22m), set user or group ID on execution ([1ms[22m), restricted deletion flag or[m
+       sticky  bit ([1mt[22m).  Instead of one or more of these letters, you can specify exactly one of the letters [1mugo[22m: the permissions granted to the user who[m
+       owns the file ([1mu[22m), the permissions granted to other users who are members of the file's group ([1mg[22m), and the permissions granted to users  that  are[m
+       in neither of the two preceding categories ([1mo[22m).[m
+[m
+       A  numeric  mode  is from one to four octal digits (0-7), derived by adding up the bits with values 4, 2, and 1.  Omitted digits are assumed to be[m
+       leading zeros.  The first digit selects the set user ID (4) and set group ID (2) and restricted deletion or sticky  (1)  attributes.   The  second[m
+       digit  selects  permissions for the user who owns the file: read (4), write (2), and execute (1); the third selects permissions for other users in[m
+       the file's group, with the same values; and the fourth for other users not in the file's group, with the same values.[m
+[m
+       [1mchmod [22mnever changes the permissions of symbolic links; the [1mchmod [22msystem call cannot change their permissions.  This is not  a  problem  since  the[m
+       permissions  of  symbolic  links are never used.  However, for each symbolic link listed on the command line, [1mchmod [22mchanges the permissions of the[m
+       pointed-to file.  In contrast, [1mchmod [22mignores symbolic links encountered during recursive directory traversals.[m
+[m
+[1mSETUID AND SETGID BITS[0m[m
+       [1mchmod [22mclears the set-group-ID bit of a regular file if the file's group ID does not match the user's effective group ID or one of the user's  sup‐[m
+       plementary group IDs, unless the user has appropriate privileges.  Additional restrictions may cause the set-user-ID and set-group-ID bits of [4mMODE[0m[m
+[7m Manual page chmod(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       or [4mRFILE[24m to be ignored.  This behavior depends on the policy and functionality of the underlying [1mchmod [22msystem call.   When  in  doubt,  check  the[m
+[7m Manual page chmod(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       underlying system behavior.[m
+[7m Manual page chmod(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       For  directories  [1mchmod  [22mpreserves  set-user-ID and set-group-ID bits unless you explicitly specify otherwise.  You can set or clear the bits with[m
+[7m Manual page chmod(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       symbolic modes like [1mu+s [22mand [1mg-s[22m.  To clear these bits for directories with a numeric mode requires an additional leading zero, or leading  =  like[m
+[7m Manual page chmod(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m00755 [22m, or [1m=755[0m[m
+[7m Manual page chmod(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mRESTRICTED DELETION FLAG OR STICKY BIT[0m[m
+[7m Manual page chmod(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       The  restricted deletion flag or sticky bit is a single bit, whose interpretation depends on the file type.  For directories, it prevents unprivi‐[m
+[7m Manual page chmod(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       leged users from removing or renaming a file in the directory unless they own the file or the directory; this is called  the  [4mrestricted[24m  [4mdeletion[0m[m
+[7m Manual page chmod(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [4mflag[24m for the directory, and is commonly found on world-writable directories like [1m/tmp[22m.  For regular files on some older systems, the bit saves the[m
+[7m Manual page chmod(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       program's text image on the swap device so it will load more quickly when run; this is called the [4msticky[24m [4mbit[24m.[m
+[7m Manual page chmod(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[1mOPTIONS[0m[m
+[7m Manual page chmod(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       Change the mode of each FILE to MODE.  With [1m--reference[22m, change the mode of each FILE to that of RFILE.[m
+[7m Manual page chmod(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-c[22m, [1m--changes[0m[m
+[7m Manual page chmod(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              like verbose but report only when a change is made[m
+[7m Manual page chmod(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-f[22m, [1m--silent[22m, [1m--quiet[0m[m
+[7m Manual page chmod(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              suppress most error messages[m
+[7m Manual page chmod(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-v[22m, [1m--verbose[0m[m
+[7m Manual page chmod(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              output a diagnostic for every file processed[m
+[7m Manual page chmod(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--no-preserve-root[0m[m
+[7m Manual page chmod(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              do not treat '/' specially (the default)[m
+[7m Manual page chmod(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--preserve-root[0m[m
+[7m Manual page chmod(1) line 30 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              fail to operate recursively on '/'[m
+[7m Manual page chmod(1) line 31 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 32 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--reference[22m=[4mRFILE[0m[m
+[7m Manual page chmod(1) line 33 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              use RFILE's mode instead of MODE values[m
+[7m Manual page chmod(1) line 34 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page chmod(1) line 35 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tbash-4.4$ chmod 577[K[K[K577 myDir
+bash-4.4$ cd myDir
+bash-4.4$ ls
+bash-4.4$ ls -l
+total 0
+bash-4.4$ ls
+bash-4.4$ cd ..
+bash-4.4$ ls
+myDir
+bash-4.4$ cd.. ..
+bash-4.4$ ls
+Assignment1  assignment1script.txt  cs131  Worksheet1  Worksheet2
+bash-4.4$ cd Assignment1
+bash-4.4$ cd[K[Kls
+myDir
+bash-4.4$ myDir2
+bash: myDir2: command not found
+bash-4.4$ mkDir myDir2
+bash: mkDir: command not found
+bash-4.4$ mkdir myDir2
+bash-4.4$ mkdir myDir2[K3
+bash-4.4$ cd
+bash-4.4$ ls
+a  a.txt  b.text  b.txt  cs131	c.txt  exampleDir  index.html  index.html.1  Rogelio-Comino
+bash-4.4$ cd cs131
+bash-4.4$ cd Assignment1
+bash-4.4$ ls
+myDir  myDir2  myDir3
+bash-4.4$ cd myDir2
+bash-4.4$ touch myFile.txt
+bash-4.4$ mv myFu[Kile.txt ../myDir3
+bash-4.4$ cd[K[Kls
+bash-4.4$ cd ..
+bash-4.4$ ls
+myDir  myDir2  myDir3
+bash-4.4$ free -m[K[K[K[K[K[K[Kman free
+[?1049h[22;0;0t[?1h=FREE(1)                                                               User Commands                                                               FREE(1)[m
+[m
+[1mNAME[0m[m
+       free - Display amount of free and used memory in the system[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mfree [22m[[4moptions[24m][m
+[m
+[1mDESCRIPTION[0m[m
+       [1mfree  [22mdisplays the total amount of free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel. The[m
+       information is gathered by parsing /proc/meminfo. The displayed columns are:[m
+[m
+       [1mtotal  [22mTotal installed memory (MemTotal and SwapTotal in /proc/meminfo)[m
+[m
+       [1mused   [22mUsed memory (calculated as [1mtotal [22m- [1mfree [22m- [1mbuffers [22m- [1mcache[22m)[m
+[m
+       [1mfree   [22mUnused memory (MemFree and SwapFree in /proc/meminfo)[m
+[m
+       [1mshared [22mMemory used (mostly) by tmpfs (Shmem in /proc/meminfo)[m
+[m
+       [1mbuffers[0m[m
+              Memory used by kernel buffers (Buffers in /proc/meminfo)[m
+[m
+       [1mcache  [22mMemory used by the page cache and slabs (Cached and SReclaimable in /proc/meminfo)[m
+[m
+       [1mbuff/cache[0m[m
+              Sum of [1mbuffers [22mand [1mcache[0m[m
+[m
+       [1mavailable[0m[m
+              Estimation of how much memory is available for starting new applications, without swapping. Unlike the data provided by the [1mcache  [22mor  [1mfree[0m[m
+              fields, this field takes into account page cache and also that not all reclaimable memory slabs will be reclaimed due to items being in use[m
+              (MemAvailable in /proc/meminfo, available on kernels 3.14, emulated on kernels 2.6.27+, otherwise the same as [1mfree[22m)[m
+[m
+[1mOPTIONS[0m[m
+       [1m-b[22m, [1m--bytes[0m[m
+              Display the amount of memory in bytes.[m
+[m
+       [1m-k[22m, [1m--kibi[0m[m
+              Display the amount of memory in kibibytes.  This is the default.[m
+[m
+       [1m-m[22m, [1m--mebi[0m[m
+              Display the amount of memory in mebibytes.[m
+[m
+[7m Manual page free(1) line 1 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-g[22m, [1m--gibi[0m[m
+[7m Manual page free(1) line 2 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              Display the amount of memory in gibibytes.[m
+[7m Manual page free(1) line 3 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 4 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--tebi [22mDisplay the amount of memory in tebibytes.[m
+[7m Manual page free(1) line 5 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 6 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--pebi [22mDisplay the amount of memory in pebibytes.[m
+[7m Manual page free(1) line 7 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 8 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--kilo [22mDisplay the amount of memory in kilobytes. Implies --si.[m
+[7m Manual page free(1) line 9 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 10 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--mega [22mDisplay the amount of memory in megabytes. Implies --si.[m
+[7m Manual page free(1) line 11 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 12 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--giga [22mDisplay the amount of memory in gigabytes. Implies --si.[m
+[7m Manual page free(1) line 13 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 14 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--tera [22mDisplay the amount of memory in terabytes. Implies --si.[m
+[7m Manual page free(1) line 15 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 16 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m--peta [22mDisplay the amount of memory in petabytes. Implies --si.[m
+[7m Manual page free(1) line 17 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 18 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K       [1m-h[22m, [1m--human[0m[m
+[7m Manual page free(1) line 19 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              Show all output fields automatically scaled to shortest three digit unit and display the units of print out.  Following units are used.[m
+[7m Manual page free(1) line 20 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 21 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                B = bytes[m
+[7m Manual page free(1) line 22 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                K = kibibyte[m
+[7m Manual page free(1) line 23 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                M = mebibyte[m
+[7m Manual page free(1) line 24 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                G = gibibyte[m
+[7m Manual page free(1) line 25 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                T = tebibyte[m
+[7m Manual page free(1) line 26 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K                P = pebibyte[m
+[7m Manual page free(1) line 27 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 28 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K              If unit is missing, and you have exbibyte of RAM or swap, the number is in tebibytes and columns might not be aligned with header.[m
+[7m Manual page free(1) line 29 (press h for help or q to quit)[27m[K[K [KESCESC[KOO[KBB[K[m
+[7m Manual page free(1) line 30 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0tbash-4.4$ man free[1Pfree[1Pfree[1Pfree[1Pfree[C[C[C[C -m
+              total        used        free      shared  buff/cache   available
+Mem:          71367       12472        1189        1272       57706       55124
+Swap:          4119        1058        3061
+bash-4.4$ ls -l/etc/os-release
+ls: invalid option -- '/'
+Try 'ls --help' for more information.
+bash-4.4$ ls l[K-l
+total 12
+dr-xrwxrwx 2 rogeliof23 rogeliof23 4096 Sep 23 01:14 myDir
+drwxrwxr-x 2 rogeliof23 rogeliof23 4096 Sep 23 01:24 myDir2
+drwxrwxr-x 2 rogeliof23 rogeliof23 4096 Sep 23 01:24 myDir3
+bash-4.4$ cat /etc/os-release
+NAME="Red Hat Enterprise Linux"
+VERSION="8.6 (Ootpa)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="8.6"
+PLATFORM_ID="platform:el8"
+PRETTY_NAME="Red Hat Enterprise Linux 8.6 (Ootpa)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:8::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/red_hat_enterprise_linux/8/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 8"
+REDHAT_BUGZILLA_PRODUCT_VERSION=8.6
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="8.6"
+bash-4.4$ exit
+exit
+
+Script done on 2023-09-23 01:30:18-04:00

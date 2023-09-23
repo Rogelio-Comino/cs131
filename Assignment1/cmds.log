@@ -1,0 +1,195 @@
+    1  SHELL
+    2  $SHELL
+    3  history > cmds.log
+    4  $exit
+    5  % mkdir exampleDir
+    6  psswd
+    7  systemct1 enable
+    8  systemct1 enable --now cockpit.socket
+    9  wget www.github.com
+   10  psswd
+   11  passwd
+   12  git status
+   13  mkdir cs131
+   14  wget www.github.com
+   15  mkdir exampleDir
+   16  history
+   17  cmds.log
+   18  man history
+   19  man ls
+   20  touch a.txt
+   21  ls
+   22  touch b.text
+   23  touch c.txt
+   24  touch b.txt
+   25  cd ..
+   26  ls
+   27  cd rogeliof23
+   28  ls
+   29  cd cs131
+   30  mkDir Worksheet1
+   31  mkdir Worksheet1
+   32  history
+   33  cd Worksheet1
+   34  history
+   35  cmds.log
+   36  man ls
+   37  ls
+   38  cd cs131
+   39  ls
+   40  cd Worksheet1
+   41  ls ..
+   42  cd ..
+   43  history
+   44  cd Worksheet1
+   45  history
+   46  wget www.github.com
+   47  history
+   48  cmds.log
+   49  touch worksheet1.txt
+   50  ls
+   51  git status
+   52  git add
+   53  ln
+   54  ls
+   55  cd cs131
+   56  git init
+   57  git init cs131
+   58  wget www.github.com/Rogelio-Comino
+   59  ls
+   60  cd cs131
+   61  ls
+   62  git init
+   63  ls
+   64  git status
+   65  git add Worksheet1
+   66  git status
+   67  git add cs131
+   68  git status
+   69  git commit -m "My first commit for cs131"
+   70  user.email "comino.rogelio@gmail.com"
+   71  git config --global user.email "comino.rogelio@gmail.com"
+   72  git commit -m "My first commit for cs131"
+   73  git remote add origin https://github.com/Rogelio-Comino/cs131.git
+   74  ls
+   75  git status
+   76  cd cs131
+   77  git status
+   78  path
+   79  ls
+   80  rm cs131
+   81  ls -ltr
+   82  git config --global user.email "comino.rogelio@gmail.com"
+   83  ssh-keygen
+   84  cd
+   85  chdir
+   86  cd
+   87  echo
+   88  ls
+   89  cd cs131
+   90  ls
+   91  cd cs131
+   92  cd..
+   93  cd ..
+   94  ls -ltr
+   95  cd cs131/
+   96  git init
+   97  git status
+   98  git config --global user.email "comino.rogelio@gmail.com"
+   99  git config --global user.name "Rogelio-Comino"
+  100  cd ~/.ssh && ssh-keygen
+  101  mkdir ~/.ssh
+  102  cd ~/.ssh && ssh-keygen
+  103  cat id_rsa.pub
+  104  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDs5LDr14gA1rwTQDjJA69J1m+GbfhT/Il36uCV5E+fkOOeiOHaXCKlpWrcyVQz3k/DZ530TsVNulVKkw1gXsljx6257rH0gtN9au33bycKVVsW6FU+KwzkAFHvJhrdbsY8WHP3+gVrln1VAm6AfQNNhE8ZJmosU5HmlayidGa526+FioLqsDNB7nB2D1r/2n+QmxqOhKFLGZGWF57BGTf5XXcI5t9q4KZmkr4phh8rZQC/QJ77d+LD4fF/EQ8ovGmRjyrmmP6EP7byo3bAoezu8k5ZA6RWVOZZGOWnnXdjGL6x+jsyPLkJi+xocC1DE/QxVf0DrviL9iVwqTxltHNwYRJp4eEcU7we9V3MAhf/vZUl6kl4wPNwhK1rOPE8jq5FuiuhqPdlh5dYYxdFQXVkD7cIDnzH3Hkyg6p/G3UNERKgpMXn3RDg4ywA/XWx0FvLCrWqhRbBHnwlDRuS+rxQBHDYeYsaHCRBSZzjcEATAPU27ZgHSpBDMKcgq83heIM= rogeliof23@sjsu.pic2.isv.ihost.com
+  105  git remote add origin git@github.com:Rogelio-Comino/cs131.git
+  106  git remossh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDs5LDr14gA1rwTQDjJA69J1m+GbfhT/Il36uCV5E+fkOOeiOHaXCKlpWrcyVQz3k/DZ530TsVNulVKkw1gXsljx6257rH0gtN9au33bycKVVsW6FU+KwzkAFHvJhrdbsY8WHP3+gVrln1VAm6AfQNNhE8ZJmosU5HmlayidGa526+FioLqsDNB7nB2D1r/2n+QmxqOhKFLGZGWF57BGTf5XXcI5t9q4KZmkr4phh8rZQC/QJ77d+LD4fF/EQ8ovGmRjyrmmP6EP7byo3bAoezu8k5ZA6RWVOZZGOWnnXdjGL6x+jsyPLkJi+xocC1DE/QxVf0DrviL9iVwqTxltHNwYRJp4eEcU7we9V3MAhf/vZUl6kl4wPNwhK1rOPE8jq5FuiuhqPdlh5dYYxdFQXVkD7cIDnzH3Hkyg6p/G3UNERKgpMXn3RDg4ywA/XWx0FvLCrWqhRbBHnwlDRuS+rxQBHDYeYsaHCRBSZzjcEATAPU27ZgHSpBDMKcgq83heIM= rogeliof23@sjsu.pic2.isv.ihost.com
+  107  cd ..
+  108  cd cs131
+  109  git remote add origin git@github.com:Rogelio-Comino/cs131.git
+  110  git commit -m "committing first repo for cs131"
+  111  git push --set-upstream origin master
+  112  ssh -T git@github.com
+  113  git remote -v
+  114  git remote set-url origin ssh link
+  115  git remote set-url origin git@github.com:Rogelio-Comino/cs131.git
+  116  git push --set-upstream origin master
+  117  history
+  118  git status
+  119  ls
+  120  cd cs131
+  121  ls
+  122  cd ..
+  123  ls
+  124  cd cs131
+  125  rm cs131
+  126  cd ..
+  127  ls
+  128  mv cmds.log
+  129  mv cmds.log cs131
+  130  cd cs131
+  131  ls
+  132  mv cmds.log Worksheet1
+  133  git status
+  134  git add Worksheet1/cmds.log
+  135  git status
+  136  git commit -m "cmds.log for cs131"
+  137  git push --set-upstream origin master
+  138  ls
+  139  cd cs131
+  140  ls
+  141  mkdir Worksheet2
+  142  cd Worksheet2
+  143  ls
+  144  cd cs131/Worksheet2
+  145  wget https://raw.githubusercontent.com/khanchandaniashish/CS131/main/Global%20YouTube%20Statistics.csv
+  146  ls
+  147  cat Global YouTube Statistics.csv
+  148  cat 'Global YouTube Statistics.csv'
+  149  cd
+  150  ls
+  151  echo "hello" > a.txt
+  152  echo "hello" > a
+  153  man md
+  154  exit
+  155  man free
+  156  script
+  157  ls
+  158  rm typescript
+  159  ls
+  160  cd cs131
+  161  ls
+  162  cd Worksheet1
+  163  cd ..
+  164  ls
+  165  mkdir Assignment1
+  166  rm Assignment1
+  167  rm -r Assignment1
+  168  ls
+  169  cd ..
+  170  mkdir Assignment1
+  171  ls
+  172  cat a
+  173  cat a.txt
+  174  cat b.txt
+  175  echo shell
+  176  echo Shell
+  177  echo $SHELL
+  178  man ls
+  179  man git
+  180  lw
+  181  ls
+  182  man rm
+  183  rm -r Assignment1
+  184  ls
+  185  cd cs131
+  186  man script
+  187  script -a assignment1script.txt
+  188  ls
+  189  mv assignment1script.txt ./Assignment1
+  190  ls
+  191  Assignment1
+  192  cd Assignment1
+  193  ls
+  194  cat assignment1script.txt
+  195  history > cmds.log
