@@ -1,0 +1,68 @@
+
+  294  wget https://raw.githubusercontent.com/khanchandaniashish/CS131/main/Global%20YouTube%20Statistics.csv
+  295  ls
+  296  mkdir Worksheet5
+  297  ls
+  298  ls
+  299  cd cs131
+  300  cd Worksheet5
+  301  mikdir "United States"
+made the directory where the genres will take place
+  302  mkdir "United States"
+  303  ls
+  304  history
+  305  cd cs131
+  306  ls
+  307  cd cs131
+  308  ls
+  309  l
+  310  ls
+made the variable
+  311  categories=("Music" "Entertainment" "Gaming" "Comedy")
+here is the for loop but I messed up and forgot the youtube part
+  312  for category in "${categories[@]}"; do grep -i 'United States' "Global Statistics.csv" | grep -i "$category" > "Worksheet5/United States/$category.txt"; done
+  313  cd Worksheet5
+  314  ls
+  315  cd 'United States'
+  316  ls
+here I checked to see if the genre files were made which they were but they were empty because I didnt realize i messed up
+  317  cat Comedy.txt
+  318  /..
+  319  cd /..
+  320  ls
+  321  cd $HOME
+  322  ls
+  323  cd cs131
+  324  ls
+messed up again
+  325  for category in "${categories[@]}"; do grep -i 'United States' "Global Statistics.csv" | grep -i "$category" > "Worksheet5/United States/$category.txt"; done
+got it right this time
+  326  for category in "${categories[@]}"; do grep -i 'United States' "Global YouTube Statistics.csv" | grep -i "$category" > "Worksheet5/United States/$category.txt"; done
+  327  cd Worksheet5
+  328  ls
+  329  cd 'United States'
+  330  ls
+making sure its all there
+  331  cd Comedy.txt
+  332  cat Comedy.txt
+  333  cd ../
+did it right but from the wrong directory
+  334  wc -l "Worksheet5/United States/Music.txt" "Worksheet5/United States/Entertainment.txt" "Worksheet5/United States/Gaming.txt" "Worksheet5/United States/Comedy.txt" > ws5.txt
+  335  ls
+  336  cat ws5.txt
+  337  wc -l "Worksheet5/United States/Music.txt" "Worksheet5/United States/Entertainment.txt" "Worksheet5/United States/Gaming.txt" "Worksheet5/United States/Comedy.txt" > ws5.txt
+  338  cat ws5.txt
+  339  cd ../
+  340  wc -l "Worksheet5/United States/Music.txt" "Worksheet5/United States/Entertainment.txt" "Worksheet5/United States/Gaming.txt" "Worksheet5/United States/Comedy.txt" > ws5.txt
+  341  ls
+  342  cat ws5.txt
+oops 
+  343  echo "why did that fucking happen?"
+  344  mv ws5 ./Worksheet5
+  345  mv ws5.txt ./Worksheet5
+  346  ls
+  347  cd cs131
+  348  cd Worksheet5
+  349  ls
+  350  history >> cmds.log
+
