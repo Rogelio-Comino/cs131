@@ -1,0 +1,86 @@
+  397  cd cs131/Assignment3
+  398  ls
+  399  cat last.fake
+  400  clear
+  401  grep 'f23' last.fake
+  402  grep 'f23' last.fake > lastf23.fake
+
+Gather all users with f23
+
+  403  cat lastf23.fake
+  404  wc -l last.fake
+  405  wc -l lastf23.fake
+  406  mkdir  Assignment3.txt
+  407  grep 'Sun' lastf23.fake | awk '{print $1}' | sort -u | awk 'BEGIN{print "The list of people who worked on Sunday are:"}{print}END{print "Kudos to these people for putting in the work"}'
+
+TASK 2
+filters the lines in "lastf23.fake" that contain 'Sun' (indicating login on Sunday)extracts the first column (usernames) from the filtered lines and sorts the usernames and keeps only the distinct ones using the -u flag
+
+  408  grep 'Sun' lastf23.fake | awk '{print $1}' | sort -u | awk 'BEGIN{print "The list of people who worked on Sunday are:"}{print}END{print "Kudos to these people for putting in the work"}' > Assignment3.txt
+  409  touch Assignment3.txt
+  410  grep 'Sun' lastf23.fake | awk '{print $1}' | sort -u | awk 'BEGIN{print "The list of people who worked on Sunday are:"}{print}END{print "Kudos to these people for putting in the work"}' > Assignment3.txt
+  411  rmdir Assignment3.txt
+  412  ls
+  413  touch assignment3.txt
+  414  ls
+
+
+
+  415  grep 'Sun' lastf23.fake | awk '{print $1}' | sort -u | awk 'BEGIN{print "The list of people who worked on Sunday are:"}{print}END{print "Kudos to these people for putting in the work"}' > assignment3.txt
+  416  ls
+
+
+TASK 3
+command uses awk to filter lines where the 6th column (time) matches either "23:.." (from 11 PM to 11:59 PM) or "00:[0-3]" (from 12 AM to 3:59 AM), and then prints the first column (usernames).
+
+  417  awk '$6 ~ /23:..|00:[0-3]/ {print $1}' lastf23.fake | sort -u | awk 'BEGIN{print "Night Owls List:"}{print}END{print "Night Owls are dope. Please ensure you get enough sleep though."}'
+  418  awk '$6 ~ /23:..|00:[0-3]/ {print $1}' lastf23.fake | sort -u | awk 'BEGIN{print "Night Owls List:"}{print}END{print "Night Owls are dope. Please ensure you get enough sleep though."}' > assignment3.txt
+  419  cat assignment3.txt
+
+
+
+TASK 4
+This command uses awk to filter lines where the 6th column (time) matches "0[5-9]:.." (from 05:00 AM to 09:59 AM), and then prints the first column (usernames)
+
+  420  awk '$6 ~ /0[5-9]:../ {print $1}' lastf23.fake | sort -u | awk 'BEGIN{print "Early Birds List:"}{print}END{print "Early Birds are dope. Please ensure you get enough sleep though."}'
+  421  awk '$6 ~ /0[5-9]:../ {print $1}' lastf23.fake | sort -u | awk 'BEGIN{print "Early Birds List:"}{print}END{print "Early Birds are dope. Please ensure you get enough sleep though."}' > assignment3.txt
+  422  cat assignment3.txt
+  423  awk '/^t/ {print $1}' | sort | uniq  lastf23.fake
+  424  cd cs131/Assignment3
+  425  awk '/^t/ {print $1}' | sort | uniq  lastf23.fake
+  426  awk '$1 ~ /^t/' lastf23.fake
+  427  ls
+  428  cd cs131/Assignment3
+  429  awk '$1 ~ /^t/' lastf23.fake
+
+TASK 5
+This part of the command filters lines in "lastf23.fake" that have usernames starting with the letter "t." and sort and uniq make it abc order and one entry per user
+  430  awk '$1 ~ /^t/' lastf23.fake | sort | uniq
+  431  awk -F ':' '$1 ~ /^a/ && $3 % 2 == 0' passwd.fake
+  432  ls
+  433  cat passwd.fake
+  434  awk -F ':' '$1 ~ /^a/ && $3 % 2 == 0' passwd.fake
+
+
+TASK 6
+ it will print the lines from "passwd.fake" where the usernames start with 'a' and have a UID divisible by 2.
+
+  435  awk -F ':' '$1 ~ /^a/ && $3 % 2 == 0' passwd.fake > task7.txt
+ 
+
+
+
+ TASK 7 
+[200~will print the distinct lines in "passwd.fake" after deleting all letters, digits, and space
+  437  sed 's/[A-Za-z0-9 ]//g' passwd.fake | sort -u
+  438  sed 's/[A-Za-z0-9 ]//g' passwd.fake | sort -u > task7.txt
+  439  grep 'Sun' lastf23.fake | awk '{print $1}' | sort -u | awk 'BEGIN{print "The list of people who worked on Sunday are:"}{print}END{print "Kudos to these people for putting in the work"}' > task2.txt
+  440  awk '$6 ~ /23:..|00:[0-3]/ {print $1}' lastf23.fake | sort -u | awk 'BEGIN{print "Night Owls List:"}{print}END{print "Night Owls are dope. Please ensure you get enough sleep though."}' > assignment3.txt > task3.txt
+  441  awk '$6 ~ /0[5-9]:../ {print $1}' lastf23.fake | sort -u | awk 'BEGIN{print "Early Birds List:"}{print}END{print "Early Birds are dope. Please ensure you get enough sleep though."}' > task4.txt
+  442  ls
+  443  awk '$6 ~ /0[5-9]:../ {print $1}' lastf23.fake | sort -u | awk 'BEGIN{print "Early Birds List:"}{print}END{print "Early Birds are dope. Please ensure you get enough sleep though."}' > task5.txt
+  444  ls
+  445  awk -F ':' '$1 ~ /^a/ && $3 % 2 == 0' passwd.fake > task6.txt
+  446  sed 's/[A-Za-z0-9 ]//g' passwd.fake | sort -u > task7.txt
+  447  ls
+  448  history > cmds.log
